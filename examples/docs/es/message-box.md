@@ -240,7 +240,7 @@ Prompt es utilizado cuando se requiere entrada de informacion del usuario.
           cancelButtonText: 'Cancel',
           inputPattern: /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/,
           inputErrorMessage: 'Invalid Email'
-        }).then(value => {
+        }).then(({ value }) => {
           this.$message({
             type: 'success',
             message: 'Your email is:' + value
@@ -437,7 +437,7 @@ Si Element fue importado completamente, agregara los siguientes metodos globales
 Si prefieres importar `MessageBox` cuando lo necesites (on demand):
 
 ```javascript
-import { MessageBox } from 'element-ui';
+import { MessageBox } from 'element-ui-hao';
 ```
 
 Los metodos correspondientes: `MessageBox`, `MessageBox.alert`, `MessageBox.confirm` y `MessageBox.prompt`. Los parametros son los mismos que los anteriores.

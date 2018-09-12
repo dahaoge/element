@@ -5,9 +5,9 @@
     "utils": {
       "plugins": [
         ["module-resolver", {
-          "root": ["element-ui"],
+          "root": ["element-ui-hao"],
           "alias": {
-            "element-ui/src": "element-ui/lib"
+            "element-ui-hao/src": "element-ui-hao/lib"
           }
         }]
       ]

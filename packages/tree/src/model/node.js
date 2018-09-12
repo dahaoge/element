@@ -1,4 +1,4 @@
-import objectAssign from 'element-ui/src/utils/merge';
+import objectAssign from 'element-ui-hao/src/utils/merge';
 import { markNodeData, NODE_KEY } from './util';
 
 export const getChildState = node => {
@@ -287,7 +287,7 @@ export default class Node {
     let targetNode = null;
 
     for (let i = 0; i < this.childNodes.length; i++) {
-      if (this.childNodes[i] === data) {
+      if (this.childNodes[i].data === data) {
         targetNode = this.childNodes[i];
         break;
       }

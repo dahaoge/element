@@ -1,6 +1,6 @@
-import { hasClass, addClass, removeClass } from 'element-ui/src/utils/dom';
-import ElCheckbox from 'element-ui/packages/checkbox';
-import ElTag from 'element-ui/packages/tag';
+import { hasClass, addClass, removeClass } from 'element-ui-hao/src/utils/dom';
+import ElCheckbox from 'element-ui-hao/packages/checkbox';
+import ElTag from 'element-ui-hao/packages/tag';
 import Vue from 'vue';
 import FilterPanel from './filter-panel.vue';
 import LayoutObserver from './layout-observer';
@@ -124,7 +124,7 @@ export default {
                             : ''
                         }
                         {
-                          (column.filters && column.filters.length) || column.filterMethod
+                          column.filterable
                             ? <span class="el-table__column-filter-trigger" on-click={ ($event) => this.handleFilterClick($event, column) }><i class={ ['el-icon-arrow-down', column.filterOpened ? 'el-icon-arrow-up' : ''] }></i></span>
                             : ''
                         }

@@ -1,9 +1,9 @@
 import Pager from './pager.vue';
-import ElSelect from 'element-ui/packages/select';
-import ElOption from 'element-ui/packages/option';
-import ElInput from 'element-ui/packages/input';
-import Locale from 'element-ui/src/mixins/locale';
-import { valueEquals } from 'element-ui/src/utils/util';
+import ElSelect from 'element-ui-hao/packages/select';
+import ElOption from 'element-ui-hao/packages/option';
+import ElInput from 'element-ui-hao/packages/input';
+import Locale from 'element-ui-hao/src/mixins/locale';
+import { valueEquals } from 'element-ui-hao/src/utils/util';
 
 export default {
   name: 'ElPagination',
@@ -205,8 +205,8 @@ export default {
           if (val !== this.$parent.internalPageSize) {
             this.$parent.internalPageSize = val = parseInt(val, 10);
             this.$parent.userChangePageSize = true;
-            this.$parent.$emit('size-change', val);
             this.$parent.$emit('update:pageSize', val);
+            this.$parent.$emit('size-change', val);
           }
         }
       }
@@ -261,9 +261,9 @@ export default {
           }
         },
         reassignMaxValue(value) {
-          var internalPageCount = this.$parent.internalPageCount;
+          const { internalPageCount } = this.$parent;
           if (+value > internalPageCount) {
-            this.$refs.input.setCurrentValue(internalPageCount);
+            this.$refs.input.setCurrentValue(internalPageCount || 1);
           }
         }
       },

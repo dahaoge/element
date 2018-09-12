@@ -1,7 +1,7 @@
 <script>
-  import { isDef } from 'element-ui/src/utils/shared';
-  import scrollIntoView from 'element-ui/src/utils/scroll-into-view';
-  import { generateId } from 'element-ui/src/utils/util';
+  import { isDef } from 'element-ui-hao/src/utils/shared';
+  import scrollIntoView from 'element-ui-hao/src/utils/scroll-into-view';
+  import { generateId } from 'element-ui-hao/src/utils/util';
 
   const copyArray = (arr, props) => {
     if (!arr || !Array.isArray(arr) || !props) return arr;
@@ -230,12 +230,14 @@
                 hover: 'mouseenter'
               }[expandTrigger];
               const triggerHandler = () => {
-                this.activeItem(item, menuIndex);
-                this.$nextTick(() => {
-                  // adjust self and next level
-                  this.scrollMenu(this.$refs.menus[menuIndex]);
-                  this.scrollMenu(this.$refs.menus[menuIndex + 1]);
-                });
+                if (this.visible) {
+                  this.activeItem(item, menuIndex);
+                  this.$nextTick(() => {
+                    // adjust self and next level
+                    this.scrollMenu(this.$refs.menus[menuIndex]);
+                    this.scrollMenu(this.$refs.menus[menuIndex + 1]);
+                  });
+                }
               };
               events.on[triggerEvent] = triggerHandler;
               if (triggerEvent === 'mouseenter' && this.changeOnSelect) {

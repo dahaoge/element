@@ -1,8 +1,8 @@
 <script>
 import UploadList from './upload-list';
 import Upload from './upload';
-import ElProgress from 'element-ui/packages/progress';
-import Migrating from 'element-ui/src/mixins/migrating';
+import ElProgress from 'element-ui-hao/packages/progress';
+import Migrating from 'element-ui-hao/src/mixins/migrating';
 
 function noop() {}
 
@@ -146,11 +146,13 @@ export default {
         raw: rawFile
       };
 
-      try {
-        file.url = URL.createObjectURL(rawFile);
-      } catch (err) {
-        console.error(err);
-        return;
+      if (this.listType === 'picture-card' || this.listType === 'picture') {
+        try {
+          file.url = URL.createObjectURL(rawFile);
+        } catch (err) {
+          console.error('[Element Error][Upload]', err);
+          return;
+        }
       }
 
       this.uploadFiles.push(file);
@@ -239,6 +241,14 @@ export default {
         }
       };
     }
+  },
+
+  beforeDestroy() {
+    this.uploadFiles.forEach(file => {
+      if (file.url && file.url.indexOf('blob:') === 0) {
+        URL.revokeObjectURL(file.url);
+      }
+    });
   },
 
   render(h) {

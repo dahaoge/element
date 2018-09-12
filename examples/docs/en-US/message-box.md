@@ -239,7 +239,7 @@ Prompt is used when user input is required.
           cancelButtonText: 'Cancel',
           inputPattern: /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/,
           inputErrorMessage: 'Invalid Email'
-        }).then(value => {
+        }).then(({ value }) => {
           this.$message({
             type: 'success',
             message: 'Your email is:' + value
@@ -433,7 +433,7 @@ If Element is fully imported, it will add the following global methods for Vue.p
 If you prefer importing `MessageBox` on demand:
 
 ```javascript
-import { MessageBox } from 'element-ui';
+import { MessageBox } from 'element-ui-hao';
 ```
 
 The corresponding methods are: `MessageBox`, `MessageBox.alert`, `MessageBox.confirm` and `MessageBox.prompt`. The parameters are the same as above.
