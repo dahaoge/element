@@ -22,7 +22,7 @@ In main.js:
 
 ```javascript
 import Vue from 'vue';
-import ElementUI from 'element-ui';
+import ElementUI from 'element-ui-hao';
 import 'element-ui/lib/theme-chalk/index.css';
 import App from './App.vue';
 
@@ -67,7 +67,7 @@ Luego, si necesita Button y Select, edite main.js:
 
 ```javascript
 import Vue from 'vue';
-import { Button, Select } from 'element-ui';
+import { Button, Select } from 'element-ui-hao';
 import App from './App.vue';
 
 Vue.component(Button.name, Button);
@@ -155,7 +155,7 @@ import {
   MessageBox,
   Message,
   Notification
-} from 'element-ui';
+} from 'element-ui-hao';
 
 Vue.use(Pagination);
 Vue.use(Dialog);
@@ -238,7 +238,7 @@ Importando Element completamente：
 
 ```js
 import Vue from 'vue';
-import Element from 'element-ui';
+import Element from 'element-ui-hao';
 Vue.use(Element, { size: 'small', zIndex: 3000 });
 ```
 
@@ -246,7 +246,7 @@ Importando Element parcialmente：
 
 ```js
 import Vue from 'vue';
-import { Button } from 'element-ui';
+import { Button } from 'element-ui-hao';
 
 Vue.prototype.$ELEMENT = { size: 'small', zIndex: 3000 };
 Vue.use(Button);

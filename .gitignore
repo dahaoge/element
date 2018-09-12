@@ -7,13 +7,14 @@ lerna-debug.log.*
 lib
 .idea
 .vscode
-examples/element-ui
+examples/element-ui-hao
 examples/pages/en-US
 examples/pages/zh-CN
 examples/pages/es
-fe.element/element-ui
+fe.element/element-ui-hao
 .npmrc
 coverage
 waiter.config.js
 build/bin/algolia-key.js
 .envrc
+.history
